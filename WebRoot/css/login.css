@@ -25,3 +25,8 @@ height: 60px;
 clear:both;
 text-align:center;
 }
+
+#message
+{
+	color: red;
+}

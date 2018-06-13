@@ -1,8 +1,16 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登录 | MyBlog</title>
+<title
+>登录 | MyBlog</title>
 
 <!-- Bootstrap core CSS -->
 <link
@@ -23,7 +31,7 @@
 				id="input" class="form-control" placeholder="用户名" name="username"
 				required> <label for="inputPassword" class="sr-only">密码</label>
 			<input type="password" id="inputPassword" class="form-control"
-				placeholder="密码" name="password" required>
+				placeholder="密码" name="password" required> <span id="message"></span>
 
 			<button class="btn btn-lg btn-primary btn-block" type="submit"
 				id="submit">登录</button>
@@ -43,6 +51,17 @@
 		</div>
 	</div>
 	<!-- footer -->
+	
+	<%
+	String message=(String)request.getAttribute("message");
+	if(message!=null&&message.equals("账号密码有误"))
+	{%>
+	<script>
+	document.getElementById("message").innerHTML="账号密码有误，请重新输入！";
+	</script>
+	<% }%>
+	
+	 
 
 </body>
 </html>

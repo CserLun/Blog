@@ -24,7 +24,7 @@
 			<div class="col-md-3" id="left_content">
 
 				<div id="title">
-					<h2><a href="/Blog/login.html">MyBlog</a></h2>
+					<h2><a href="/Blog/login.jsp">MyBlog</a></h2>
 					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
 				</div>
 

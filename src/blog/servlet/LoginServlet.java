@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.tagext.Tag;
 
 import blog.dao.ArticleDao;
@@ -26,7 +27,16 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-		LoginUtils.login(request);
+		LoginUtils.login(request);    //连接mysql，验证账号密码。把用户信息user对象存入session
+		HttpSession session = request.getSession();
+		User user=(User) session.getAttribute("user");
+		if(user==null)  //返回user为空，说明账号密码有误
+		{
+			//System.out.println("账号密码有误");
+			request.setAttribute("message","账号密码有误");
+			request.getRequestDispatcher("/login.jsp").forward(request, response);	//转发到登录JSP
+			return;
+		}
 		
 		//初始化分类
 		ArticleService as =  ArticleService.getInstance();		
