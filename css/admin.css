@@ -1,0 +1,22 @@
+[genuitec-file-id="wc1-6"],[genuitec-lp-path="/Blog/WebRoot/css/admin.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+@CHARSET "UTF-8";
+
+.admin_div{
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+button{
+	border:0px;
+	
+}
+
+
+input[ disabled ]{
+	background-color:white;	
+}

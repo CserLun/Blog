@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录 | MyBlog</title>
+
+<!-- Bootstrap core CSS -->
+<link
+	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="css/login.css" />
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"54319",secure:"54324"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-166" data-genuitec-path="/Blog/WebRoot/login.html">
+
+	<div class="container" id="main" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-166" data-genuitec-path="/Blog/WebRoot/login.html">
+		<form class="form-signin" id="form" action="LoginServlet"
+			method="post">
+			<a href="/Blog/index.jsp"><h2 class="form-signin-heading">MyBlog</h2></a>
+			<label for="input" class="sr-only">用户名</label> <input type="text"
+				id="input" class="form-control" placeholder="用户名" name="username"
+				required> <label for="inputPassword" class="sr-only">密码</label>
+			<input type="password" id="inputPassword" class="form-control"
+				placeholder="密码" name="password" required>
+
+			<button class="btn btn-lg btn-primary btn-block" type="submit"
+				id="submit">登录</button>
+
+			<a href="index.jsp">访客登录</a>
+		</form>
+		<!-- /form -->
+	</div>
+
+	<!-- /container -->
+
+	<div id="footer">
+		<div>
+			<a href="https://github.com/Lemonreds"><img src="img/github.png"
+				width="20px" height="20px" class="img-circle">&nbsp;&nbsp;GitHub</a>
+			&nbsp;| <a href="#">&nbsp;&nbsp;Sakura</a>
+		</div>
+	</div>
+	<!-- footer -->
+
+</body>
+</html>

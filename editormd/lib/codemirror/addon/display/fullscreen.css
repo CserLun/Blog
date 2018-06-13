@@ -1,0 +1,10 @@
+[genuitec-file-id="wc1-23"],[genuitec-lp-path="/Blog/WebRoot/editormd/lib/codemirror/addon/display/fullscreen.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.CodeMirror-fullscreen {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  height: auto;
+  z-index: 9;
+}
