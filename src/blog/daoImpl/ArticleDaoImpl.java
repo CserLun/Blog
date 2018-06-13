@@ -259,7 +259,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			// 关闭连接
 			DBUtils.Close(ps, rs);
 			// 排序 article compareTo();
-			Collections.sort(list);
+			Collections.sort(list);//根据Article的compareTo的规则（Date）排序
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

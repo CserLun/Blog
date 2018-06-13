@@ -38,11 +38,14 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		
+		request.setAttribute("user", user);
+		
 		//初始化分类
 		ArticleService as =  ArticleService.getInstance();		
 		request.setAttribute("sort_count_map", as.getSortAndCount());
-		//初始化文章列表
-		request.setAttribute("article_list", as.getArticle());
+		//初始化文章列表（所有文章，按时间倒序排序）
+		
+		request.setAttribute("article_list", as.getArticle());  
 		//初始化获取标签
 		TagService ts = TagService.getInstance();			
 		request.setAttribute("tag_list", ts.getAllTag());	

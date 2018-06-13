@@ -41,7 +41,7 @@ public class NewCommentServlet extends HttpServlet {
 		
 		//返回的信息		
 		String info;		
-		if( ! isRpeat ){	
+		//if( ! isRpeat ){	
 		Comment cm ;
 		//获取对象
 		try {
@@ -57,9 +57,9 @@ public class NewCommentServlet extends HttpServlet {
 			e.printStackTrace();
 			info="comment failed!";			
 		}
-		}else{
+		/*}else{
 			info ="repeat submit comment!";
-		}
+		}*/
 				
 		//发送新的cookie
 		Cookie c = new Cookie(cookie_name,DateUtils.getFormatDate(new Date()));

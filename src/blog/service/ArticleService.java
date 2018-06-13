@@ -18,7 +18,7 @@ import blog.utils.StringUtils;
 
 public class ArticleService {
 
-	private ArticleDao dao;
+	private ArticleDao dao;    //数据库访问接口对象
 
 	private static ArticleService instance;
 	
@@ -32,7 +32,7 @@ public class ArticleService {
 	 * @return
 	 */
 	public static final ArticleService getInstance() {
-		if (instance == null) {
+		if (instance == null) {    //如果服务类实例未创建才new一个实例，否则返回已有实例
 			try {
 				instance = new ArticleService();
 			} catch (Exception e) {
@@ -144,10 +144,10 @@ public class ArticleService {
 	 */
 	public List getArticle() {
 		List<Article> list = dao.getAllArticle();
-		for (Article a : list) {
+		//for (Article a : list) {
 			ArticleUtils.cutContent(list);
 			ArticleUtils.cutTime(list);
-		}
+		//}
 		return list;
 	}
 
