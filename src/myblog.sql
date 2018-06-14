@@ -47,10 +47,9 @@ CREATE TABLE `t_tag` (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `t_user` (
-  `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'primary_key',
   `user_name` VARCHAR(20) NOT NULL COMMENT 'username',
   `user_password` VARCHAR(20) NOT NULL COMMENT 'password',
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_name`)
 ) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `t_visitor` (

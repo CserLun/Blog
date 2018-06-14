@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +49,46 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean register(String username, String password) {
 		// todo
-		return false;
+		String sql="select * from t_user where user_name=?";
+		PreparedStatement ps = null;
+		PreparedStatement pastmt = null;			//写入数据库用
+
+		boolean abletowrite=false;		//默认账号已存在数据库，不能写入
+		boolean ifregister=false;		//默认注册未成功
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			// bean导入
+			if (rs.next()) {   //数据库已存在该账号
+				abletowrite=false;
+				ifregister=false;
+			}
+			else
+				{
+					//表示数据库不存在该账号，允许插入数据
+					String sqlinsert="Insert into t_user(user_name,user_password) values(?,?)";
+					pastmt=conn.prepareStatement(sqlinsert);
+					pastmt.setString(1, username);
+					pastmt.setString(2, password);
+					int n=pastmt.executeUpdate();
+					if(n==1) {
+						ifregister=true;
+					}
+					else
+						ifregister=false;
+				
+				}
+			DBUtils.Close(ps, rs);   //关闭数据库查询
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(ifregister) {
+			return true;
+		}
+		else
+			return false;
 	}
 
 	/* (non-Javadoc)
@@ -58,7 +99,7 @@ public class UserDaoImpl implements UserDao {
 
 		User user = null;
 
-		String sql = "select * from t_user where user_name=? and user_password=? ";
+		String sql = "select * from t_user where user_name=? and user_password=?";
 		PreparedStatement ps = null;
 		try {
 			ps = conn.prepareStatement(sql);
@@ -86,4 +127,7 @@ public class UserDaoImpl implements UserDao {
 		}
 		return user;   //返回user这个javabean对象
 	}
+
+	
+	
 }
