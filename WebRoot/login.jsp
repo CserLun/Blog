@@ -35,7 +35,8 @@
 
 			<button class="btn btn-lg btn-primary btn-block" type="submit"
 				id="submit">登录</button>
-
+			<a href="register.jsp">注册</a>
+			<a>|</a>
 			<a href="index.jsp">访客登录</a>
 		</form>
 		<!-- /form -->
