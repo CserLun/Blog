@@ -56,7 +56,7 @@
 	if(message!=null&&message.equals("注册失败"))
 	{%>
 	<script>
-	document.getElementById("message").innerHTML="注册失败，请重试";
+	document.getElementById("message").innerHTML="用户名已被注册，请重新输入";
 	</script>
 	<% }
 	if(message!=null&&message.equals("注册成功"))

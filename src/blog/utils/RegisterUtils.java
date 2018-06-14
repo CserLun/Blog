@@ -13,14 +13,14 @@ public class RegisterUtils {
 		
 		String username= request.getParameter("newusername");   //从表单获取账号密码
 		String password= request.getParameter("newpassword");
-		System.out.print("注册用户名："+username);
-		System.out.print("注册密码："+password);
+		//System.out.print("注册用户名："+username);
+		//System.out.print("注册密码："+password);
 			
 		UserDao dao = UserDaoImpl.getInstance();
 		
 		result=dao.register(username, password);
 		if(result) {
-			System.out.print("注册成功");
+			//System.out.print("注册成功");
 			//写入session
 			HttpSession session = request.getSession();
 			session.setAttribute("result", result);   //把注册信息存入session
@@ -29,7 +29,7 @@ public class RegisterUtils {
 			//写入session
 			HttpSession session = request.getSession();
 			session.setAttribute("result", result);   //把注册信息存入session
-			System.out.print("注册失败");
+			//System.out.print("注册失败");
 		}
 		/*
 		User user = dao.login(username, password);  //无该账号则返回user=null

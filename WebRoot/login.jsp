@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title
 >登录 | MyBlog</title>
 
@@ -26,7 +27,7 @@
 	<div class="container" id="main">
 		<form class="form-signin" id="form" action="LoginServlet"
 			method="post">
-			<a href="/Blog/index.jsp"><h2 class="form-signin-heading">MyBlog</h2></a>
+			<a href="index.jsp"><h2 class="form-signin-heading">MyBlog</h2></a>
 			<label for="input" class="sr-only">用户名</label> <input type="text"
 				id="input" class="form-control" placeholder="用户名" name="username"
 				required> <label for="inputPassword" class="sr-only">密码</label>
@@ -37,7 +38,7 @@
 				id="submit">登录</button>
 			<a href="register.jsp">注册</a>
 			<a>|</a>
-			<a href="index.jsp">访客登录</a>
+			<a href="index.jsp?username=unknown_visitor&password=null">访客登录</a>
 		</form>
 		<!-- /form -->
 	</div>
@@ -53,13 +54,16 @@
 	</div>
 	<!-- footer -->
 	
+	
 	<%
 	String message=(String)request.getAttribute("message");
 	if(message!=null&&message.equals("账号密码有误"))
 	{%>
+	
 	<script>
 	document.getElementById("message").innerHTML="账号密码有误，请重新输入！";
 	</script>
+	
 	<% }%>
 	
 	 
