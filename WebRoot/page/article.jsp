@@ -132,7 +132,7 @@
 			<a><span class="glyphicon glyphicon-thumbs-down" onclick="diss(this,${comm.id})">${comm.diss}</span></a>
 			&nbsp;	
 			<!-- admin here -->
-			<c:if test="${sessionScope.user!=null}">	
+			<c:if test="${sessionScope.user.user_name==article.author||sessionScope.user.user_name==comm.nickname}">	
 			<span class="btn btn-default" style="color:red;" onclick="deletecm(this,${comm.id})">删除</span>
 			&nbsp;		
 			</c:if>		
@@ -151,7 +151,9 @@
 			<div id="comment">
 			
 			<form action="/Blog/NewCommentServlet?id=${article.id}" method="post">
-			<input  style="width:30%" class="form-control" type="text" name="w_nickname" value="热心网友"  >
+			<!--input  style="width:30%" class="form-control" type="text" name="w_nickname" value="热心网友"  -->
+			
+			<span style="text-align: ">发表评论：</span>
 			<br/>							
 			<textarea style="resize:none; width:100%; height:180px;" name="w_content"></textarea>
 			<br/>

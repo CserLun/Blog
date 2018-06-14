@@ -6,11 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
 
 import blog.model.Article;
 import blog.model.Comment;
+import blog.model.User;
 
 public class Form2Bean {
 	
@@ -19,12 +21,16 @@ public class Form2Bean {
 		
 		int id = Integer.valueOf(request.getParameter("id"));
 		
-		String nickname = request.getParameter("w_nickname");
+		//String nickname = request.getParameter("w_nickname");
+		HttpSession session = request.getSession();
+		User user=(User) session.getAttribute("user");
+		
 		String content = request.getParameter("w_content");
 		
 		Comment bean = new Comment();
 		bean.setArticle_id(id);
-		bean.setNickname(nickname);
+		bean.setNickname(user.getUser_name());  //不使用用户自定义昵称，使用用户名
+		
 		bean.setContent(content);
 		if(vilidate(bean)){
 			bean.setDiss(0);
@@ -50,10 +56,12 @@ public class Form2Bean {
 	public static Article articleForm2Bean(HttpServletRequest request) throws FailException{
 		
 		Map value = new HashMap();
+		HttpSession session = request.getSession();
+		User user=(User) session.getAttribute("user");
 		
 		value.put("title",request.getParameter("title"));
 		value.put("time",request.getParameter("time"));
-		value.put("author",request.getParameter("author"));
+		value.put("author",user.getUser_name());
 		value.put("sort", request.getParameter("sort"));		
 		//String tags = request.getParameter("tags");		
 		value.put("content", request.getParameter("content"));		

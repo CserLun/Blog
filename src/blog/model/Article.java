@@ -37,7 +37,8 @@ public class Article implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Object o) //排序规则：按时间
+	{
 		if (o instanceof Article) {
 			Article article = (Article) o;
 
@@ -51,10 +52,13 @@ public class Article implements Comparable {
 				e.printStackTrace();
 			}
 
-			return -this_date.compareTo(other_date);
+			return -this_date.compareTo(other_date);   //用compare函数比较两个date大小。
+			//0：date相同；       小于0：这个date小于参数的date
 		}
 		return 0;
 	}
+	
+	
 
 	public int getId() {
 		return id;

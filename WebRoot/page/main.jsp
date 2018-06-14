@@ -24,15 +24,15 @@
 			<div class="col-md-3" id="left_content">
 
 				<div id="title">
-					<h2><a href="/Blog/login.html">MyBlog</a></h2>
+					<h2><a href="/Blog/login.jsp">MyBlog</a></h2>
 					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
 				</div>
 
 				<div class="c_center" id="person_info">
 					<img src="/Blog/img/header.jpg" height="130" width="130"
 						alt="丢失了我的头像?" class="img-circle">
-					<h4 class="text-muted">Lemonreds</h4>
-					<h5 class="text-muted">星星和浮云.</h5>
+					<h4 class="text-muted"><span>${user.user_name}</span></h4>
+					<h5 class="text-muted">这里可以是个人简介.</h5>
 				</div>
 
 				<div class="c_center">
@@ -150,7 +150,8 @@
 					<c:forEach var="article"   items="${article_list}" >	
 					<div  class="list-group-item">									
 					<h4><a href="/Blog/ArticleServlet?id=${article.id}">${article.title}</a></h4>
-					<br/>
+					
+					作者：${article.author}&nbsp;&nbsp;<br/>
 					<span>${article.time}&nbsp;&nbsp;|</span>
 					<a href="/Blog/SortServlet?get=${article.sort}">${article.sort}</a>&nbsp;&nbsp;|
 					<span>阅读次数: ${article.visit}</span>

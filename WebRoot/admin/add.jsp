@@ -38,9 +38,8 @@
 		   		<!-- time -->
 		   		<span class="help">时间</span>
 		   		<input type="text"  class="form-control" name="time" value="${time}" >
-		   		<!-- author-->
-		   		<span class="help">作者</span>
-		   		<input type="text" class="form-control" name="author" >	
+		   		
+		   			
 		   		<!-- sort --> 				
 		   		<span class="help">分类</span><br/>
  				<c:forEach var="s"  items="${sort_count}">

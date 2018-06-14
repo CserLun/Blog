@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.tagext.Tag;
 
 import blog.dao.ArticleDao;
@@ -26,13 +27,25 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-		LoginUtils.login(request);
+		LoginUtils.login(request);    //连接mysql，验证账号密码。把用户信息user对象存入session
+		HttpSession session = request.getSession();
+		User user=(User) session.getAttribute("user");
+		if(user==null)  //返回user为空，说明账号密码有误
+		{
+			//System.out.println("账号密码有误");
+			request.setAttribute("message","账号密码有误");
+			request.getRequestDispatcher("/login.jsp").forward(request, response);	//转发到登录JSP
+			return;
+		}
+		
+		request.setAttribute("user", user);
 		
 		//初始化分类
 		ArticleService as =  ArticleService.getInstance();		
 		request.setAttribute("sort_count_map", as.getSortAndCount());
-		//初始化文章列表
-		request.setAttribute("article_list", as.getArticle());
+		//初始化文章列表（所有文章，按时间倒序排序）
+		
+		request.setAttribute("article_list", as.getArticle());  
 		//初始化获取标签
 		TagService ts = TagService.getInstance();			
 		request.setAttribute("tag_list", ts.getAllTag());	
