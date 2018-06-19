@@ -47,9 +47,9 @@
 
 	<div id="footer">
 		<div>
-			<a href="https://github.com/Lemonreds"><img src="img/github.png"
+			<a href="https://github.com/CserLun/Blog"><img src="img/github.png"
 				width="20px" height="20px" class="img-circle">&nbsp;&nbsp;GitHub</a>
-			&nbsp;| <a href="#">&nbsp;&nbsp;Sakura</a>
+			&nbsp;| <a href="http://www.scnu.edu.cn/">&nbsp;&nbsp;SCNU</a>
 		</div>
 	</div>
 	<!-- footer -->

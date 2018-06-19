@@ -19,7 +19,8 @@ public class SortServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//获取的是所有分类 还是一个分类的文章
-		String get = StringUtils.pareCode(request.getParameter("get"));				
+		//String get = StringUtils.pareCode(request.getParameter("get"));	
+		String get=request.getParameter("get");
 		//初始化分类和和文章
 		ArticleService as = ArticleService.getInstance();		
 		request.setAttribute("sort_article_map",as.getSortAndAirticle(get));					
