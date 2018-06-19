@@ -146,32 +146,6 @@
 				</div>
 				<!-- visit-->
 
-                <c:if test="${sessionScope.user.user_name!='游客'}">
-				<div id="tag">
-					<div class="list-group">
-						<span class="list-group-item active">我的标签</span> <br />
-
-						<!-- 这里初始化标签 -->
-						<c:forEach var="t" varStatus="status" items="${tag_list}">
-							<c:choose>
-								<c:when test="${status.count%2==1}">
-									<span class="label label-info"><a
-										href="/Blog/TagsServlet?get=${t.tag}">
-											&nbsp;${t.tag}&nbsp;</a></span>
-								</c:when>
-								<c:otherwise>
-									<span class="label label-success"><a
-										href="/Blog/TagsServlet?get=${t.tag}">
-											&nbsp;${t.tag}&nbsp;</a></span>
-								</c:otherwise>
-							</c:choose>
-
-						</c:forEach>
-						<!-- 初始化标签完成 -->
-					</div>
-				</div>
-				<!-- tag -->
-				</c:if>
 
 
 				<!-- admin here -->
