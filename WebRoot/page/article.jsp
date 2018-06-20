@@ -151,14 +151,20 @@
 			<div id="comment">
 			
 			<form action="/Blog/NewCommentServlet?id=${article.id}" method="post">
-			<!--input  style="width:30%" class="form-control" type="text" name="w_nickname" value="热心网友"  -->
+			<!--input  style="width:30%" class="form-control " type="text" name="w_nickname" value="热心网友"  -->
 			
-			<span style="text-align: ">发表评论：</span>
-			<br/>							
-			<textarea style="resize:none; width:100%; height:180px;" name="w_content"></textarea>
+			<span class="c_left">发表评论：</span>
 			<br/>
-			<br/>			
+			<c:if test="${sessionScope.user.user_name=='游客'}">
+			<textarea style="resize:none; width:100%; height:180px;" disabled="disabled"  name="w_content"> 您没有评论权限 </textarea>
+			<span style="color:red">游客不能评论，请先<a href="/Blog/login.jsp">登录</a>!</span><br/><br/>			
+			<input  class="btn btn-default"  type="submit"  disabled="disabled" value="评论" onclick="onclick"/>	
+			</c:if>							
+			<c:if test="${sessionScope.user.user_name!='游客'}">
+			<textarea style="resize:none; width:100%; height:180px;" name="w_content"></textarea><br/><br/>			
 			<input  class="btn btn-default"  type="submit"   value="评论" onclick="onclick"/>	
+			</c:if>
+			
 			<br/>						
 			</form>			
 			</div>
@@ -172,4 +178,6 @@
 	</div>
 	<!-- footer -->
 </body>
+
+
 </html>

@@ -36,22 +36,27 @@
 		   		<span class="help">标题</span>
 		   		<input type="text" class="form-control" name="title" >
 		   		<!-- time -->
+		   		<br>
 		   		<span class="help">时间</span>
 		   		<input type="text"  class="form-control" name="time" value="${time}" >
 		   		
 		   			
-		   		<!-- sort --> 				
+		   		<!-- sort --> 	
+		   		<br>			
 		   		<span class="help">分类</span><br/>
  				<c:forEach var="s"  items="${sort_count}">
- 				<input class="btn btn-default" type="button" value="${s.key}" onclick="sort_click(this)"> &nbsp;					
+ 				<input class="btn btn-default sort-btn" type="button" value="${s.key}" onclick="sort_click(this)"> &nbsp;					
  				</c:forEach> 	 			
- 				<input type="text" class="form-control"  id="sort" name="sort">		
+ 				<input type="text" class="form-control" style="display:none" id="sort" name="sort">		
  				
-				<!-- tag -->		
+				<!-- tag -->	
+				<br>
+				<br>	
 		   		<span class="help">标签</span><br/>
 		   		<c:forEach var="tag" items="${all_tag}">
 		   		<input class="btn btn-default" type="button" value="${tag.tag}" onclick="tags_click(this)">&nbsp;
 		   		</c:forEach>
+		   		<br>
 		   		<input type="text" class="form-control" id="tags"  name="tags">	
 		   		</div>   		
 		   		

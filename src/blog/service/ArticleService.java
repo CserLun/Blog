@@ -150,6 +150,18 @@ public class ArticleService {
 		//}
 		return list;
 	}
+	
+	public List getMyArticle(String user_name)
+	{
+		List<Article> list = dao.getAllArticle();
+		List<Article> myList=new ArrayList();
+		for(Article a:list)
+		{
+			if(a.getAuthor().equals(user_name))
+				myList.add(a);
+		}
+		return myList;
+	}
 
 	/**
 	 * 获取分类和它的文章

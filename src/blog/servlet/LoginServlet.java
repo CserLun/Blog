@@ -64,6 +64,8 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("visited", VisitorDB.totalVisit());
 		request.setAttribute("member", VisitorDB.totalMember());
 		
+		request.setAttribute("myArticle_list", as.getMyArticle(user.getUser_name()));
+		
 		//转发到 博客主页 界面
 		request.getRequestDispatcher("/page/main.jsp").forward(request, response);	
 		

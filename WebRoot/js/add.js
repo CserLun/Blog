@@ -7,6 +7,14 @@ function sort_click(btn){
  	var sort = document.getElementById("sort");
  	//设置分类值
  	sort.value=value;
+ 	var sort_btns=document.getElementsByClassName("sort-btn");
+ 	for(var i=0;i<sort_btns.length;i++)
+ 		{
+ 		sort_btns[i].style.background="#ffffff";
+ 		sort_btns[i].style.color="#000000";
+ 		}
+ 	btn.style.background="#337ab7";
+ 	btn.style.color="#ffffff";
 
  }
  function tags_click(btn){	

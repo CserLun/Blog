@@ -90,21 +90,34 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public Map getColumAndCount(String search_column) {
 
-		String sql = " select " + search_column + " ,count(" + search_column + ") as counts  from t_article  group by "
-				+ search_column;
+		/*String sql = " select " + search_column + " ,count(" + search_column + ") as counts  from t_article  group by "
+				+ search_column;*/
 		Map map = null;
-		try {
+		/*try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
+			ResultSet rs = ps.executeQuery();*/
 			map = new HashMap();
-			while (rs.next()) {
+			/*while (rs.next()) {
 				map.put(rs.getString(search_column), rs.getInt("counts"));
 			}
 			DBUtils.Close(ps, rs);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		map.put("搞笑",0);
+		map.put("娱乐",0);
+		map.put("科技",0);
+		map.put("实事",0);
+		map.put("文化",0);
+		map.put("生活",0);
+		map.put("艺术",0);
+		map.put("体育",0);
+		map.put("财经",0);
+		map.put("社会",0);
+		
+		
+		
 		return map;
 	}
 
