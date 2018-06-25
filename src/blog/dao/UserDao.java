@@ -11,7 +11,7 @@ public interface UserDao {
 	 * @param password
 	 * @return
 	 */
-	boolean register(String username, String password);
+	boolean register(String username, String password, String motto);
 
 	/**
 	 * 登录验证

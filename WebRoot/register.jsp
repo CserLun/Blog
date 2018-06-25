@@ -77,7 +77,7 @@ function handleFiles(file) {
 					</div>
 					<div class="form-group" style="margin-top:2rem">
 						<label for="inputPersonalsign">个性签名&thinsp;</label>
-						<textarea class="form-control" placeholder="留下你最酷的一句话吧"  rows="3"></textarea>
+						<textarea class="form-control" name="newmotto" placeholder="留下你最酷的一句话吧"  rows="3"></textarea>
 					</div>
 					<div class="form-group" style="margin-top:2rem">
 						<label for="inputfile">头像设置</label>

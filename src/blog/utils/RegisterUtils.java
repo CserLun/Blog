@@ -13,12 +13,13 @@ public class RegisterUtils {
 		
 		String username= request.getParameter("newusername");   //从表单获取账号密码
 		String password= request.getParameter("newpassword");
+		String motto=request.getParameter("newmotto");
 		//System.out.print("注册用户名："+username);
 		//System.out.print("注册密码："+password);
 			
 		UserDao dao = UserDaoImpl.getInstance();
 		
-		result=dao.register(username, password);
+		result=dao.register(username, password,motto);
 		if(result) {
 			//System.out.print("注册成功");
 			//写入session

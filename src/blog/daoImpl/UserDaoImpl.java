@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
 	 * @see blog.daoImpl.UserDao#register(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public boolean register(String username, String password) {
+	public boolean register(String username, String password,String motto) {
 		// todo
 		String sql="select * from t_user where user_name=?";
 		PreparedStatement ps = null;
@@ -67,12 +67,13 @@ public class UserDaoImpl implements UserDao {
 			else
 				{
 					//表示数据库不存在该账号，允许插入数据
-					String sqlinsert="Insert into t_user(user_name,user_password) values(?,?)";
+					String sqlinsert="Insert into t_user(user_name,user_password,user_motto) values(?,?,?)";
 					pastmt=conn.prepareStatement(sqlinsert);
 					pastmt.setString(1, username);
 					pastmt.setString(2, password);
+					pastmt.setString(3, motto);
 					int n=pastmt.executeUpdate();
-					if(n==1) {
+					if(n>=1) {
 						ifregister=true;
 					}
 					else
