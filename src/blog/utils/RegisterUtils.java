@@ -1,7 +1,15 @@
 package blog.utils;
 
+import java.io.IOException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.jspsmart.upload.SmartUpload;
+import com.jspsmart.upload.SmartUploadException;
 
 import blog.dao.UserDao;
 import blog.daoImpl.UserDaoImpl;
@@ -9,13 +17,25 @@ import blog.model.User;
 
 public class RegisterUtils {
 	static boolean result;
-	public static void register(HttpServletRequest request){
-		
-		String username= request.getParameter("newusername");   //从表单获取账号密码
+	public static void register(HttpServletRequest request,HttpServletResponse response,ServletConfig config) throws ServletException, IOException{
+		//使用smartupload对象对二进制表单进行处理
+		 SmartUpload su = new SmartUpload();//新建一个SmartUpload对象
+		 // Initialization 
+		 su.initialize(config,request,response); 
+		 try {
+		     su.upload();
+		} catch (SmartUploadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 String username=su.getRequest().getParameter("newusername");
+		 String password=su.getRequest().getParameter("newpassword");
+		 String motto=su.getRequest().getParameter("newmotto");
+		 
+		/*String username= request.getParameter("newusername");   //从表单获取账号密码
 		String password= request.getParameter("newpassword");
-		String motto=request.getParameter("newmotto");
-		//System.out.print("注册用户名："+username);
-		//System.out.print("注册密码："+password);
+		String motto=request.getParameter("newmotto");*/
+
 			
 		UserDao dao = UserDaoImpl.getInstance();
 		

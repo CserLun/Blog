@@ -61,7 +61,7 @@ function handleFiles(file) {
 		</div>
 		<div class="col-md-4" style="margin-top:10rem;">
 			<div class="row">
-				<form class="form-inline" id="form" action="RegisterServlet" method="post" 
+				<form class="form-inline" id="form" action="RegisterServlet" method="post" enctype="multipart/form-data"
 				style="width:100%;margin:0 auto;">
 					<div class="form-group" style="margin-top:2rem">
 						<label for="input" style="line-height:34px;" >用户名&nbsp;&thinsp;&thinsp;</label> 
@@ -81,7 +81,7 @@ function handleFiles(file) {
 					</div>
 					<div class="form-group" style="margin-top:2rem">
 						<label for="inputfile">头像设置</label>
-   						<input type="file"  onchange="handleFiles(this.files,this.parentNode)">
+   						<input type="file" name="uploadFile" onchange="handleFiles(this.files,this.parentNode)">
    						<img class="img-circle" src="" id="img" width=100 style="margin-top:1rem">
    						<span id="message" style="color:red"></span> 
 					</div>
