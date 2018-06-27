@@ -38,7 +38,7 @@
 		<div class="head">
 			<div id="title">
 				<h2>
-					<a href="/Blog/index.jsp">MyBlog</a>
+					<a href="#"> </a>
 				</h2>
 			</div>
 		</div>
@@ -50,8 +50,8 @@
 				<br />
 				<div>
 					<h5>
-						<span>${article.time}</span> <a href="/Blog/SortServlet?get=${article.sort}">${article.sort}</a>
-					${article.author}
+						<span>${article.time}</span> <a href="/Blog/SortServlet?get=${article.sort}">&nbsp;&nbsp;类别：${article.sort}&nbsp;&nbsp;</a>
+					by&nbsp;${article.author}
 					</h5>
 				</div>
 				<div class="r_div">
@@ -63,7 +63,7 @@
 				</div>
 				<div id="tag">
 				<c:forEach var="t" items="${article_tags}">
-					<a href="/Blog/TagsServlet?get=${t.tag}">${t.tag}&nbsp;</a>
+					<a href="/Blog/TagsServlet?get=${t.tag}">所属标签：${t.tag}&nbsp;</a>
 				</c:forEach>
 				</div>
 			</div>
