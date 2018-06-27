@@ -34,15 +34,13 @@ function handleFiles(file) {
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
 	            <li class="active"><a href="#">MyBlog</a></li>
-	            <li><a href="#">写文章</a></li>
+	            
 	            <li class="dropdown">
 	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                 	   账号 <b class="caret"></b>
 	                </a>
 	                <ul class="dropdown-menu">
-	                    <li><a href="#">设置</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">退出</a></li>
+	                    <li><a href="/Blog/login.jsp">退出</a></li>
 	                </ul>
 	            </li>
 	        </ul>

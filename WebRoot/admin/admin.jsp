@@ -20,13 +20,23 @@
 
 </head>
 <body>
-	<div class="head_line"></div>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+	    <div class="pull-center">
+	        <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">MyBlog</a></li>
+	         	<li><a href="/Blog/index.jsp">首页</a></li>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+	</nav>
 	<div class="container" id="main">
 				
 		<div id="header">
 			<div>
-				<h2><a href="/Blog/login.jsp">MyBlog-管理</a></h2>
-				<h5 class="text-muted">有点粗糙 但能用就行</h5>
+				<h2><a href="#">MyBlog-管理</a></h2>
+				<h5 class="text-muted">有点粗糙 但还是能用的</h5>
 				</div>		
 		</div>
 				 
@@ -97,7 +107,7 @@
 		
 		
 	<div id="footer">		
-		<a href="#">&nbsp;&nbsp;MyBlog</a>	
+		<a href="/Blog/index.jsp">&nbsp;&nbsp;MyBlog</a>	
 	</div> 		
 	
 </body>

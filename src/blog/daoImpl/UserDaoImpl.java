@@ -114,6 +114,8 @@ public class UserDaoImpl implements UserDao {
 				user = new User();
 				map.put("user_name", rs.getString("user_name"));
 				map.put("user_password", rs.getString("user_password"));
+				map.put("user_motto", rs.getString("user_motto"));
+				map.put("user_image", rs.getString("user_image"));
 				//map.put("user_id", rs.getString("user_id"));
 				try {
 					BeanUtils.populate(user, map);   //把map赋值给bean

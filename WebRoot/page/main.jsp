@@ -9,6 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>首页 | MyBlog</title>
 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Custom styles for this template -->
 <link
 	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -18,7 +22,27 @@
 <link type="text/css" rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
-	<div class="head_line"></div>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+	    <div class="pull-right">
+	        <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li><a href="/Blog/index.jsp">刷新</a></li>
+	            <li><a href="/Blog/AddServlet">写文章</a></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	                 	   账号 <b class="caret"></b>
+	                </a>
+	                <ul class="dropdown-menu">
+	                    <li><a href="#">设置</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="/Blog/login.jsp">退出</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+</nav>
 
 	<div class="container" id="main">
 
@@ -29,9 +53,9 @@
 
 				<div id="title">
 					<h2>
-						<a href="/Blog/login.jsp">MyBlog</a>
+						<a href="#">MyBlog</a>
 					</h2>
-					<h5 class="text-muted">Here to find something new!</h5>
+					<h5 class="text-muted">&nbsp;</h5>
 				</div>
 				<br>
 				<c:choose>
@@ -62,12 +86,12 @@
 					</c:when>
 					<c:otherwise>
 						<div class="c_center" id="person_info">
-							<img src="/Blog/img/header.jpg" height="130" width="130"
+							<img src="/Blog/upload/${user.user_image}" height="130" width="130"
 								alt="丢失了我的头像?" class="img-circle">
 							<h4 class="text-muted">
 								<span>${user.user_name}</span>
 							</h4>
-							<h5 class="text-muted">这里可以是个人简介.</h5>
+							<h5 class="text-muted">${user.user_motto}</h5>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -186,7 +210,7 @@
 			<a href="https://github.com/CserLun/Blog"><img
 				src="/Blog/img/github.png" width="20px" height="20px"
 				class="img-circle">&nbsp;&nbsp;GitHub</a> &nbsp;| <a href="http://www.scnu.edu.cn/">&nbsp;&nbsp;SCNU</a>
-			<br /> copyright © 2017
+			<br /> copyright © 2018
 		</div>
 
 		<div class="r_div">

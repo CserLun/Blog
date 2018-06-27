@@ -24,9 +24,19 @@
 <script src="./js/add.js"></script>
 </head>
 <body>
-	<div class="head_line"></div>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+	    <div class="pull-center">
+	        <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">MyBlog</a></li>
+	         	<li><a href="/Blog/index.jsp">首页</a></li>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+	</nav>
 	<div class="container" id="main">		
-				<div id="title"><h2><a href="/Blog/index.jsp">MyBlog</a></h2>					
+				<div id="title"><h2><a href="#">Write Something.....</a></h2>					
 					</div>	
 							
 		   <form action="/Blog/NewArticleServlet" method="post">
@@ -75,7 +85,7 @@
 		</div><!-- container -->
 	
 		<div id="footer">
-		<a href="#">&nbsp;&nbsp;MyBlog</a>
+		
 		
 	</div> <!-- footer -->		
 		

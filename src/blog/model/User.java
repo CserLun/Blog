@@ -5,6 +5,8 @@ public class User {
 	private int user_id;
 	private String user_name;
 	private String user_password;
+	private String user_motto;
+	private String user_image;
 		
 	
 	public User() {
@@ -28,6 +30,22 @@ public class User {
 	}
 	public void setUser_password(String user_password) {
 		this.user_password = user_password;
+	}
+
+	public String getUser_motto() {
+		return user_motto;
+	}
+
+	public void setUser_motto(String user_motto) {
+		this.user_motto = user_motto;
+	}
+
+	public String getUser_image() {
+		return user_image;
+	}
+
+	public void setUser_image(String user_image) {
+		this.user_image = user_image;
 	}
 	
 	
