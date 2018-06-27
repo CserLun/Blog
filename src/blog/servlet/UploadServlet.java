@@ -67,7 +67,7 @@ public class UploadServlet extends HttpServlet {
         // 这个路径相对当前应用的目录
         String uploadPath = getServletContext().getRealPath("/") + File.separator + UPLOAD_DIRECTORY;
         //String uploadPath = "D:" + File.separator + "tmp1111" + File.separator + UPLOAD_DIRECTORY;
-
+        System.out.println(uploadPath);
          
         // 如果目录不存在则创建
         File uploadDir = new File(uploadPath);
@@ -79,7 +79,7 @@ public class UploadServlet extends HttpServlet {
             // 解析请求的内容提取文件数据
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
- 
+            System.out.println(formItems.size());
             if (formItems != null && formItems.size() > 0) {
                 // 迭代表单数据
                 for (FileItem item : formItems) {

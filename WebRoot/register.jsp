@@ -118,6 +118,12 @@ function handleFiles(file) {
 	document.getElementById("message").innerHTML="注册成功，请登录";
 	</script>
 	<% }
+	if(message!=null&&message.equals("上传头像失败"))
+	{%>
+	<script>
+	document.getElementById("message").innerHTML="上传头像失败，请重试";
+	</script>
+	<% }
 	
 	
 	%>

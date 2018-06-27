@@ -23,11 +23,22 @@
 <link type="text/css" rel="stylesheet" href="css/login.css" />
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+	    <div class="pull-right">
+	        <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">MyBlog</a></li>
+	         
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+</nav>
 
 	<div class="container" id="main">
 		<form class="form-signin" id="form" action="LoginServlet"
 			method="post">
-			<a href="index.jsp"><h2 class="form-signin-heading">MyBlog</h2></a>
+			<h2 class="form-signin-heading">My&nbsp;Blog</h2>
 			<label for="input" class="sr-only">用户名</label> <input type="text"
 				id="input" class="form-control" placeholder="用户名" name="username"
 				required> <label for="inputPassword" class="sr-only">密码</label>

@@ -8,4 +8,14 @@
     <filter-name>ArticleFilter</filter-name>
     <url-pattern>/ArticleServlet</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>blog.servlet.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

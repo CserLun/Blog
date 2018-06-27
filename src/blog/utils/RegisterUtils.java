@@ -17,29 +17,11 @@ import blog.model.User;
 
 public class RegisterUtils {
 	static boolean result;
-	public static void register(HttpServletRequest request,HttpServletResponse response,ServletConfig config) throws ServletException, IOException{
-		//使用smartupload对象对二进制表单进行处理
-		 SmartUpload su = new SmartUpload();//新建一个SmartUpload对象
-		 // Initialization 
-		 su.initialize(config,request,response); 
-		 try {
-		     su.upload();
-		} catch (SmartUploadException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 String username=su.getRequest().getParameter("newusername");
-		 String password=su.getRequest().getParameter("newpassword");
-		 String motto=su.getRequest().getParameter("newmotto");
-		 
-		/*String username= request.getParameter("newusername");   //从表单获取账号密码
-		String password= request.getParameter("newpassword");
-		String motto=request.getParameter("newmotto");*/
+	public static void register(HttpServletRequest request,String username,String password,String motto,String imagename) throws ServletException, IOException{
 
-			
 		UserDao dao = UserDaoImpl.getInstance();
 		
-		result=dao.register(username, password,motto);
+		result=dao.register(username, password,motto,imagename);
 		if(result) {
 			//System.out.print("注册成功");
 			//写入session
