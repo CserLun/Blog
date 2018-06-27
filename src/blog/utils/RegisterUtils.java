@@ -1,7 +1,15 @@
 package blog.utils;
 
+import java.io.IOException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.jspsmart.upload.SmartUpload;
+import com.jspsmart.upload.SmartUploadException;
 
 import blog.dao.UserDao;
 import blog.daoImpl.UserDaoImpl;
@@ -9,16 +17,11 @@ import blog.model.User;
 
 public class RegisterUtils {
 	static boolean result;
-	public static void register(HttpServletRequest request){
-		
-		String username= request.getParameter("newusername");   //从表单获取账号密码
-		String password= request.getParameter("newpassword");
-		//System.out.print("注册用户名："+username);
-		//System.out.print("注册密码："+password);
-			
+	public static void register(HttpServletRequest request,String username,String password,String motto,String imagename) throws ServletException, IOException{
+
 		UserDao dao = UserDaoImpl.getInstance();
 		
-		result=dao.register(username, password);
+		result=dao.register(username, password,motto,imagename);
 		if(result) {
 			//System.out.print("注册成功");
 			//写入session

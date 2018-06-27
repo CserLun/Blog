@@ -19,7 +19,17 @@
 <link type="text/css" rel="stylesheet" href="/Blog/css/tags.css" />
 </head>
 <body>
-	<div class="head_line"></div>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+	    <div class="pull-right">
+	        <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">MyBlog</a></li>
+	         	<li><a href="/Blog/login.jsp">退出</a></li>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+	</nav>
 
 	<div class="container" id="main">
 
@@ -32,13 +42,13 @@
 					<h2>
 						<a href="/Blog/index.jsp">MyBlog</a>
 					</h2>
-					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
+					<h5 class="text-muted">&nbsp;</h5>
 				</div>
 
 				<div class="c_center" id="person_info">
-					<img src="/Blog/img/header.jpg" height="130" width="130"
+					<img src="/Blog/upload/${user.user_image}" height="130" width="130"
 						alt="what?" class="img-circle">
-					<h5 class="text-muted">Chicken Dinner Again!</h5>
+					<h5 class="text-muted">${user.user_motto}</h5>
 				</div>
 
 

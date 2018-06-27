@@ -49,6 +49,8 @@ CREATE TABLE `t_tag` (
 CREATE TABLE `t_user` (
   `user_name` VARCHAR(20) NOT NULL COMMENT 'username',
   `user_password` VARCHAR(20) NOT NULL COMMENT 'password',
+  `user_motto` VARCHAR(80) NOT NULL COMMENT 'usermotto',
+  `user_image` VARCHAR(50)  COMMENT 'userimage',
   PRIMARY KEY (`user_name`)
 ) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 

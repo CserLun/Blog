@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
 	 * @see blog.daoImpl.UserDao#register(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public boolean register(String username, String password) {
+	public boolean register(String username, String password,String motto,String imagename) {
 		// todo
 		String sql="select * from t_user where user_name=?";
 		PreparedStatement ps = null;
@@ -67,12 +67,14 @@ public class UserDaoImpl implements UserDao {
 			else
 				{
 					//表示数据库不存在该账号，允许插入数据
-					String sqlinsert="Insert into t_user(user_name,user_password) values(?,?)";
+					String sqlinsert="Insert into t_user(user_name,user_password,user_motto,user_image) values(?,?,?,?)";
 					pastmt=conn.prepareStatement(sqlinsert);
 					pastmt.setString(1, username);
 					pastmt.setString(2, password);
+					pastmt.setString(3, motto);
+					pastmt.setString(4, imagename);
 					int n=pastmt.executeUpdate();
-					if(n==1) {
+					if(n>=1) {
 						ifregister=true;
 					}
 					else
@@ -112,6 +114,8 @@ public class UserDaoImpl implements UserDao {
 				user = new User();
 				map.put("user_name", rs.getString("user_name"));
 				map.put("user_password", rs.getString("user_password"));
+				map.put("user_motto", rs.getString("user_motto"));
+				map.put("user_image", rs.getString("user_image"));
 				//map.put("user_id", rs.getString("user_id"));
 				try {
 					BeanUtils.populate(user, map);   //把map赋值给bean

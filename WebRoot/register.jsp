@@ -34,15 +34,13 @@ function handleFiles(file) {
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
 	            <li class="active"><a href="#">MyBlog</a></li>
-	            <li><a href="#">写文章</a></li>
+	            
 	            <li class="dropdown">
 	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                 	   账号 <b class="caret"></b>
 	                </a>
 	                <ul class="dropdown-menu">
-	                    <li><a href="#">设置</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">退出</a></li>
+	                    <li><a href="/Blog/login.jsp">退出</a></li>
 	                </ul>
 	            </li>
 	        </ul>
@@ -61,7 +59,7 @@ function handleFiles(file) {
 		</div>
 		<div class="col-md-4" style="margin-top:10rem;">
 			<div class="row">
-				<form class="form-inline" id="form" action="RegisterServlet" method="post" 
+				<form class="form-inline" id="form" action="RegisterServlet" method="post" enctype="multipart/form-data"
 				style="width:100%;margin:0 auto;">
 					<div class="form-group" style="margin-top:2rem">
 						<label for="input" style="line-height:34px;" >用户名&nbsp;&thinsp;&thinsp;</label> 
@@ -77,11 +75,11 @@ function handleFiles(file) {
 					</div>
 					<div class="form-group" style="margin-top:2rem">
 						<label for="inputPersonalsign">个性签名&thinsp;</label>
-						<textarea class="form-control" placeholder="留下你最酷的一句话吧"  rows="3"></textarea>
+						<textarea class="form-control" name="newmotto" placeholder="留下你最酷的一句话吧"  rows="3"></textarea>
 					</div>
 					<div class="form-group" style="margin-top:2rem">
 						<label for="inputfile">头像设置</label>
-   						<input type="file"  onchange="handleFiles(this.files,this.parentNode)">
+   						<input type="file" name="uploadFile" onchange="handleFiles(this.files,this.parentNode)">
    						<img class="img-circle" src="" id="img" width=100 style="margin-top:1rem">
    						<span id="message" style="color:red"></span> 
 					</div>
@@ -116,6 +114,12 @@ function handleFiles(file) {
 	{%>
 	<script>
 	document.getElementById("message").innerHTML="注册成功，请登录";
+	</script>
+	<% }
+	if(message!=null&&message.equals("上传头像失败"))
+	{%>
+	<script>
+	document.getElementById("message").innerHTML="上传头像失败，请重试";
 	</script>
 	<% }
 	
