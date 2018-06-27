@@ -36,24 +36,33 @@
     </div>
 	</nav>
 	<div class="container" id="main">		
-				<div id="title"><h2><a href="#">Write Something.....</a></h2>					
-					</div>	
+		<div id="title"><h2><a href="#">Write Something here.....</a></h2></div>	
 							
 		   <form action="/Blog/NewArticleServlet" method="post">
 		   		
-		   		<div class="info" >
-		   		<!-- title -->
-		   		<span class="help">标题</span>
-		   		<input type="text" class="form-control" name="title" >
-		   		<!-- time -->
-		   		<br>
-		   		<span class="help">时间</span>
-		   		<input type="text"  class="form-control" name="time" value="${time}" >
+		   		<div class="clearfix" >
 		   		
-		   			
-		   		<!-- sort --> 	
+		   		<!-- title -->
+		   		<div class="div-inline" >
+		   		<span class="help">标题：</span>
+				<input type="text" name="title" style="width:30%">
+				<!-- time -->
+				<span class="help">时间:</span>
+		   		<input type="text"  name="time" style="width:20%" value="${time}" >
+				</div>
+		   		
+		   		
+		   		<br>
+		   		<br>
+
+		   		<!-- content -->   
+                <div class="editormd" id="mdView">                
+                    <textarea name="content"></textarea>
+                </div>
+                
+                <!-- sort --> 	
 		   		<br>			
-		   		<span class="help">分类</span><br/>
+		   		<span class="help">选择所属分类</span><br/><br>
  				<c:forEach var="s"  items="${sort_count}">
  				<input class="btn btn-default sort-btn" type="button" value="${s.key}" onclick="sort_click(this)"> &nbsp;					
  				</c:forEach> 	 			
@@ -61,31 +70,24 @@
  				
 				<!-- tag -->	
 				<br>
-				<br>	
-		   		<span class="help">标签</span><br/>
+				<br>
+		   		<span class="help">标签（选择或者下方输入新标签名）</span><br/><br>
 		   		<c:forEach var="tag" items="${all_tag}">
 		   		<input class="btn btn-default" type="button" value="${tag.tag}" onclick="tags_click(this)">&nbsp;
 		   		</c:forEach>
 		   		<br>
-		   		<input type="text" class="form-control" id="tags"  name="tags">	
-		   		</div>   		
-		   		
-		   		
-		   		<div class="foot_line"></div>
-		   		<!-- content -->   
-                <div class="editormd" id="mdView">                
-                    <textarea name="content"></textarea>
-                </div>
-                <br/>
-                <input  class="btn btn-default"  type="submit"   value="提交" />
-            </form>
+		   		<input type="text" class="help" style="text-align:center;" id="tags" placeholder="新标签名"  name="tags" style="width:10%">	
+		   		</div>   	
+
+                <button class="btn btn-lg btn-primary" type="submit" style="color: blue;">提交</button>
+           </form>
 		
 		<div class="foot_line"></div>
 			<!-- container -->
 		</div><!-- container -->
 	
 		<div id="footer">
-		
+
 		
 	</div> <!-- footer -->		
 		
