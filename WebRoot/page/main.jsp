@@ -133,7 +133,7 @@
 									</a>
 							</c:forEach>
 							<!-- 初始化结束 -->
-							<a href="/Blog/SortServlet?get=${entity.key}" style="color: #337ab7"
+							<a href="/Blog/MyArticleServlet" style="color: #337ab7"
 									 class="list-group-item glyphicon glyphicon-plus">&nbsp;查看更多</a>
 						</div>
 					</div>
@@ -163,7 +163,7 @@
 								<span class="c_right">(${a.visit})</span>
 							</a>
 						</c:forEach>
-						<a href="/Blog/SortServlet?get=${entity.key}" style="color: #337ab7"
+						<a href="/Blog/RankingServlet" style="color: #337ab7"
 									 class="list-group-item glyphicon glyphicon-plus">&nbsp;查看更多</a>
 						<!-- 初始化结束 -->
 					</div>

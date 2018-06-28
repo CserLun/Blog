@@ -211,6 +211,52 @@ public class ArticleService {
 		return list;
 		
 	}
+	
+    //获取我的文章，按时间顺序排（在时间轴基础上改）
+	public List getMyAxis(String user_name) {
+		//获取数据库中的所有文章
+		List<Article> articles = getMyArticle(user_name);
+		//用来存 时间轴文章 (一种比Article类更简单适用的对象)
+		List<AxisArticle> axis_list = new ArrayList();		
+		//Article->AxisArticle
+		for (Article a : articles) {
+			AxisArticle at = ArticleUtils.getAxisArticle(a);			
+			axis_list.add(at);
+		}
+		//这里开始处理数据  文章排序是 2018-2017-2016 时间降序
+		//因为要实现 文章+文章+year 文章+文章+year的效果 这里把year封装成一个特殊的AxisArticle对象 id=0 year = 文章截至日期
+		//然后全部存入 result 中 
+		//在jsp判断id==0   
+		// true: year输出
+		// false: 输出AxisArticle对象的
+		AxisArticle tmp = null;
+		List result =  new LinkedList();			
+		//塞进去最新的一个年份 并且塞入第一个AxisArticle
+		if( ! axis_list.isEmpty()) {
+			tmp = new AxisArticle();
+			tmp.setId(0);
+			tmp.setYear( axis_list.get(0).getYear());
+			result.add(tmp);	
+			result.add(axis_list.get(0));
+		}
+		//判断文章年份是不是不一样 不一样则塞一个year		
+		for( int i=1;i<axis_list.size();i++){
+			int present_year = axis_list.get(i).getYear();
+			int past_year = axis_list.get(i-1).getYear();
+			
+			if( present_year < past_year){				
+				tmp = new AxisArticle();
+				tmp.setId(0);
+				tmp.setYear(present_year);
+				result.add(tmp);		
+			}
+			result.add(axis_list.get(i));			
+		}					
+		// 注意: 在list遍历里面动态修改了数组长度会出现内存溢出的情况		
+		return result;
+	}
+	
+	
 	public List getAllSort(){
 		return dao.getAllSort();		
 	}

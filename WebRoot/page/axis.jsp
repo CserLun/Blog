@@ -67,11 +67,20 @@
 						<tr>
 							<td><a href="/Blog/TagsServlet?get=all"><span class="glyphicon glyphicon-tags"></span>
 								&nbsp;&nbsp;标签</a></td>
-						</tr>						
+						</tr>
+						<tr>
+							<td ><a href="/Blog/MyArticleServlet"><span class="glyphicon  glyphicon-th-large"></span>
+								&nbsp;&nbsp;我的</a></td>
+						</tr>	
+						<tr>
+							<td ><a href="/Blog/RankingServlet"><span class="glyphicon glyphicon-fire"></span>
+								&nbsp;&nbsp;排行</a></td>
+						</tr>							
 						<tr>
 							<td class="active"><a href="/Blog/AxisServlet"><span class="glyphicon glyphicon-book"></span>
 								&nbsp;&nbsp;时间轴</a></td>
 						</tr>
+						
 						<tr>
 							<td><a href="/Blog/page/about.html"><span class="glyphicon glyphicon-user"></span>
 								&nbsp;&nbsp;关于</a></td>
