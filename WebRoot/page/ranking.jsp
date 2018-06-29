@@ -25,7 +25,7 @@
     <div class="container-fluid">
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	         	<li><a href="/Blog/login.jsp">退出</a></li>
 	            </li>
 	        </ul>
@@ -131,7 +131,7 @@
 
 
 	<div id="footer">
-		<a href="#">&nbsp;&nbsp;MyBlog</a>
+		<a href="#">&nbsp;&nbsp;Emm</a>
 	</div>
 	<!-- footer -->
 
