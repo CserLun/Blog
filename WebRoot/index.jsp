@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MyBlog</title>
+<title>Emm</title>
 </head>
 <body>
 	<!---jsp:forward page="/LoginServlet?username=unknown_visitor&password=null"/-->

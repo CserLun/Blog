@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>新的文章 | MyBlog</title>
+<title>新的文章 | Emm</title>
 
 
 <!-- Bootstrap core CSS -->
@@ -28,7 +28,7 @@
     <div class="container-fluid">
 	    <div class="pull-center">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	         	<li><a href="/Blog/index.jsp">首页</a></li>
 	            </li>
 	        </ul>

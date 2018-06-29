@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页 | MyBlog</title>
+<title>首页 | Emm</title>
 <!-- Bootstrap core CSS -->
 <link	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
@@ -24,7 +24,7 @@
 			<div class="col-md-3" id="left_content">
 
 				<div id="title">
-					<h2><a href="/Blog/login.jsp">MyBlog</a></h2>
+					<h2><a href="/Blog/login.jsp">Emm</a></h2>
 					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
 				</div>
 

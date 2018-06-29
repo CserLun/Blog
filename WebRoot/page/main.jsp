@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页 | MyBlog</title>
+<title>首页 | Emm</title>
 <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
     <div class="container-fluid">
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	            <li><a href="/Blog/index.jsp">刷新</a></li>
 	            <li><a href="/Blog/AddServlet">写文章</a></li>
 	            <li class="dropdown">
@@ -53,7 +53,7 @@
 
 				<div id="title">
 					<h2>
-						<a href="#">MyBlog</a>
+						<a href="#">Emm</a>
 					</h2>
 					<h5 class="text-muted">&nbsp;</h5>
 				</div>
@@ -63,7 +63,7 @@
 					<c:when test="${sessionScope.user.user_name=='游客'}">
 					
 					<br>
-						    <span style="font-size: 16px;">欢迎来到Myblog！<br></span>
+						    <span style="font-size: 16px;">欢迎来到Emm！<br></span>
 						    <span style="font-size: 16px;">请登录，体验更多功能！<br><br></span>
 							<form class="form-signin" id="form" action="LoginServlet"
 								method="post">
