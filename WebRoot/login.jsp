@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 
 <title
->登录 | MyBlog</title>
+>登录 | Emm</title>
 
 <!-- Bootstrap core CSS -->
 <link
@@ -27,7 +27,7 @@
     <div class="container-fluid">
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	         
 	            </li>
 	        </ul>
@@ -38,7 +38,7 @@
 	<div class="container" id="main">
 		<form class="form-signin" id="form" action="LoginServlet"
 			method="post">
-			<h2 class="form-signin-heading">My&nbsp;Blog</h2>
+			<h2 class="form-signin-heading">Emm</h2>
 			<label for="input" class="sr-only">用户名</label> <input type="text"
 				id="input" class="form-control" placeholder="用户名" name="username"
 				required> <label for="inputPassword" class="sr-only">密码</label>

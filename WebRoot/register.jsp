@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title
->注册 | MyBlog</title>
+>注册 | Emm</title>
 
 <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -33,7 +33,7 @@ function handleFiles(file) {
     <div class="container-fluid">
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	            
 	            <li class="dropdown">
 	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">

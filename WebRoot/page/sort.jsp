@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>分类 | MyBlog</title>
+<title>分类 | Emm</title>
 
 
 <!-- Bootstrap core CSS -->
@@ -25,7 +25,7 @@
     <div class="container-fluid">
 	    <div class="pull-right">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">MyBlog</a></li>
+	            <li class="active"><a href="#">Emm</a></li>
 	         	<li><a href="/Blog/login.jsp">退出</a></li>
 	            </li>
 	        </ul>
@@ -42,7 +42,7 @@
 
 				<div id="title">
 					<h2>
-						<a href="/Blog/index.jsp">MyBlog</a>
+						<a href="/Blog/index.jsp">Emm</a>
 					</h2>
 					<h5 class="text-muted">&nbsp;</h5>
 				</div>
@@ -126,7 +126,7 @@
 
 
 	<div id="footer">
-		<a href="#">&nbsp;&nbsp;MyBlog</a>
+		<a href="#">&nbsp;&nbsp;Emm</a>
 	</div>
 	<!-- footer -->
 
